@@ -24,4 +24,8 @@
         android:name="com.nikol412.medicalcenter.fragment.medicalCard.MedicalCardFragment"
         android:label="fragment_medical_card"
         tools:layout="@layout/fragment_medical_card" />
+    <fragment
+        android:id="@+id/sessionRecordFragment"
+        android:name="com.nikol412.medicalcenter.fragment.sessionRecord.SessionRecordFragment"
+        android:label="SessionRecordFragment" />
 </navigation>
