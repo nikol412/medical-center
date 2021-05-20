@@ -12,13 +12,51 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragment.sessionRecord.SessionRecordFragment"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".fragment.sessionRecord.SessionRecordFragment">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Запись приема"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button_result_of_appointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:onClick="@{() -> vm.onResultAppointmentClick()}"
+            android:text="Результат осмотра" />
+
+        <Button
+            android:id="@+id/button_result_analyses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:onClick="@{() -> vm.onResultOfAnalysesClick()}"
+            android:text="Результат анализов" />
+
+        <Button
+            android:id="@+id/button_prescribed_treatment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:onClick="@{() -> vm.onPrescribedTreatmentClick()}"
+            android:text="Назначенное лечение" />
+
+        <Button
+            android:id="@+id/button_certificate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:onClick="@{() -> vm.onCertificateClick()}"
+            android:text="Справка" />
 
     </LinearLayout>
 </layout>
