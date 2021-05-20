@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Medical Center</string>
+    <string name="about_us_title">О нас</string>
+    <string name="sigh_up_appointment_with_doctor_title">Запись на прием</string>
+    <string name="watch_medical_card_title">Просмотр медицинской карты</string>
+    <string name="chat_title">Чат</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
 </resources>

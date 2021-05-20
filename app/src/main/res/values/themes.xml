@@ -16,12 +16,18 @@
 
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/black</item>
-        <item name="android:background">@color/background_green</item>
+<!--        <item name="android:background">@color/background_green</item>-->
         <item name="materialButtonStyle">@style/Widget.MedicalCenter.Button</item>
+        <item name="android:editTextStyle">@style/Widget.MedicalCenter.EditText</item>
     </style>
 
 
     <style name="Widget.MedicalCenter.Button" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/button_green</item>
+    </style>
+
+    <style name="Widget.MedicalCenter.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@color/black</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>
