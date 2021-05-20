@@ -1,7 +1,23 @@
 package com.nikol412.medicalcenter.fragment.main
 
-import androidx.lifecycle.ViewModel
+import com.nikol412.medicalcenter.R
+import com.nikol412.medicalcenter.fragment.BaseViewModel
 
-class MainViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class MainViewModel : BaseViewModel() {
+
+    fun onAboutClick() {
+
+    }
+
+    fun onMakeAppointment() {
+        navController?.navigate(R.id.appointmentFragment)
+    }
+
+    fun onWatchCardClick() {
+
+    }
+
+    fun onChatClick() {
+
+    }
 }

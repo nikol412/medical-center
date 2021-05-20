@@ -15,4 +15,8 @@
         android:name="com.nikol412.medicalcenter.fragment.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/appointmentFragment"
+        android:name="com.nikol412.medicalcenter.fragment.appointment.AppointmentFragment"
+        android:label="AppointmentFragment" />
 </navigation>
