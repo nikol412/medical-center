@@ -6,14 +6,14 @@
 
         <variable
             name="vm"
-            type="com.nikol412.medicalcenter.fragment.LoginViewModel" />
+            type="com.nikol412.medicalcenter.fragment.login.LoginViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".fragment.LoginFragment">
+        tools:context=".fragment.login.LoginFragment">
 
         <EditText
             android:id="@+id/edit_text_login"

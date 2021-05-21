@@ -1,4 +1,4 @@
-package com.nikol412.medicalcenter.fragment
+package com.nikol412.medicalcenter.fragment.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
