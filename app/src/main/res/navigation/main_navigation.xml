@@ -32,4 +32,8 @@
         android:id="@+id/prescribedTreatmentFragment"
         android:name="com.nikol412.medicalcenter.fragment.prescribedTreatment.PrescribedTreatmentFragment"
         android:label="PrescribedTreatmentFragment" />
+    <fragment
+        android:id="@+id/sessionCertificateFragment"
+        android:name="com.nikol412.medicalcenter.fragment.certificate.SessionCertificateFragment"
+        android:label="SessionCertificateFragment" />
 </navigation>

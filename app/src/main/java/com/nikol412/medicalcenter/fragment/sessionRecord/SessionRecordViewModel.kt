@@ -17,6 +17,6 @@ class SessionRecordViewModel : BaseViewModel() {
     }
 
     fun onCertificateClick() {
-
+        navController?.navigate(R.id.sessionCertificateFragment)
     }
 }
