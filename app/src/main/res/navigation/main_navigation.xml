@@ -28,4 +28,8 @@
         android:id="@+id/sessionRecordFragment"
         android:name="com.nikol412.medicalcenter.fragment.sessionRecord.SessionRecordFragment"
         android:label="SessionRecordFragment" />
+    <fragment
+        android:id="@+id/prescribedTreatmentFragment"
+        android:name="com.nikol412.medicalcenter.fragment.prescribedTreatment.PrescribedTreatmentFragment"
+        android:label="PrescribedTreatmentFragment" />
 </navigation>
