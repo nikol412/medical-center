@@ -3,7 +3,7 @@ package com.nikol412.medicalcenter.db.models
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
-class Appointment : RealmObject {
+open class Appointment : RealmObject {
 
     @PrimaryKey
     var id: Int = 0
