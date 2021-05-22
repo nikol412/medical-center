@@ -50,8 +50,11 @@ class AppointmentViewModel : BaseViewModel() {
     }
 
     fun onMakeAppointmentClick() {
-        if (enteredSpeciality != null && enteredDoctor != null)
+        if (enteredSpeciality != null && enteredDoctor != null
+            && enteredDate.value != null && enteredTime.value != null
+        ) {
             navController?.navigate(R.id.medicalCardFragment)
+        }
     }
 
     private fun fetchDoctors(department: String? = null) {

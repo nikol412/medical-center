@@ -1,6 +1,7 @@
 package com.nikol412.medicalcenter.fragment.appointment
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,9 @@ class AppointmentFragment : Fragment() {
         binding.textViewDatePicker.setOnClickListener {
             dateAlert()
         }
+        binding.textViewTimePicker.setOnClickListener {
+            timeAlert()
+        }
         return binding.root
     }
 
@@ -68,7 +72,7 @@ class AppointmentFragment : Fragment() {
     }
 
     fun dateAlert() {
-        val calendar = Calendar.getInstance();
+        val calendar = Calendar.getInstance()
         val date =
             DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 calendar.set(Calendar.YEAR, year)
@@ -86,6 +90,29 @@ class AppointmentFragment : Fragment() {
         )
 
         datepicker.show()
+    }
+
+    fun timeAlert() {
+        val calendar = Calendar.getInstance()
+
+        val timeListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+            val formattedHours = if (hourOfDay < 10) "0$hourOfDay" else "$hourOfDay"
+            val formattedMinutes = if (minute < 10) "0$minute" else "$minute"
+
+            val time = "$formattedHours:$formattedMinutes"
+            viewModel.enteredTime.value = time
+        }
+
+        val timePicker = TimePickerDialog(
+            requireContext(),
+            timeListener,
+            calendar.get(Calendar.HOUR_OF_DAY),
+            calendar.get(Calendar.MINUTE),
+            true
+        )
+
+        timePicker.show()
+
     }
 
     private fun changeDateFormatAndSave(myCalendar: Calendar) {
