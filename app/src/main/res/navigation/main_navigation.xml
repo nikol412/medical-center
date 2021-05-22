@@ -18,7 +18,8 @@
     <fragment
         android:id="@+id/appointmentFragment"
         android:name="com.nikol412.medicalcenter.fragment.appointment.AppointmentFragment"
-        android:label="AppointmentFragment" />
+        android:label="AppointmentFragment"
+        tools:layout="@layout/fragment_appointment"/>
     <fragment
         android:id="@+id/medicalCardFragment"
         android:name="com.nikol412.medicalcenter.fragment.medicalCard.MedicalCardFragment"
@@ -27,13 +28,16 @@
     <fragment
         android:id="@+id/sessionRecordFragment"
         android:name="com.nikol412.medicalcenter.fragment.sessionRecord.SessionRecordFragment"
-        android:label="SessionRecordFragment" />
+        android:label="SessionRecordFragment"
+        tools:layout="@layout/fragment_session_record"/>
     <fragment
         android:id="@+id/prescribedTreatmentFragment"
         android:name="com.nikol412.medicalcenter.fragment.prescribedTreatment.PrescribedTreatmentFragment"
-        android:label="PrescribedTreatmentFragment" />
+        android:label="PrescribedTreatmentFragment"
+        tools:layout="@layout/fragment_prescribed_treatment"/>
     <fragment
         android:id="@+id/sessionCertificateFragment"
         android:name="com.nikol412.medicalcenter.fragment.certificate.SessionCertificateFragment"
-        android:label="SessionCertificateFragment" />
+        android:label="SessionCertificateFragment"
+        tools:layout="@layout/fragment_session_certificate"/>
 </navigation>
