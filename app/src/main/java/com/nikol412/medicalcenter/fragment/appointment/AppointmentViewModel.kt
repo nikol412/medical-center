@@ -18,8 +18,9 @@ class AppointmentViewModel : BaseViewModel() {
     var enteredSpeciality: String? = null
     var enteredDoctor: Doctor? = null
 
-    var enteredDate: String? = null
-    var enteredTime: String? = null
+    var enteredDate = MutableLiveData<String>()
+
+    var enteredTime = MutableLiveData<String>()
 
     val spinnerItemSelectedListenerDepartment = object : AdapterView.OnItemSelectedListener {
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {

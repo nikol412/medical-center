@@ -1,5 +1,6 @@
 package com.nikol412.medicalcenter.fragment.appointment
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,14 +13,13 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.nikol412.medicalcenter.R
 import com.nikol412.medicalcenter.databinding.FragmentAppointmentBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AppointmentFragment : Fragment() {
 
     private val viewModel: AppointmentViewModel by viewModels()
     private lateinit var binding: FragmentAppointmentBinding
-
-//    private lateinit var spinnerDepartmentsAdapter: ArrayAdapter<String>
-//    private lateinit var doctorsAdapter: ArrayAdapter<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +29,7 @@ class AppointmentFragment : Fragment() {
 
         viewModel.navController = findNavController()
         binding.vm = viewModel
+        binding.lifecycleOwner = this
 
         binding.spinnerDepartments.onItemSelectedListener =
             viewModel.spinnerItemSelectedListenerDepartment
@@ -37,6 +38,9 @@ class AppointmentFragment : Fragment() {
 
         subscribeToVM()
 
+        binding.textViewDatePicker.setOnClickListener {
+            dateAlert()
+        }
         return binding.root
     }
 
@@ -62,25 +66,33 @@ class AppointmentFragment : Fragment() {
         })
 
     }
+
+    fun dateAlert() {
+        val calendar = Calendar.getInstance();
+        val date =
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                calendar.set(Calendar.YEAR, year)
+                calendar.set(Calendar.MONTH, monthOfYear)
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                changeDateFormatAndSave(calendar)
+            }
+        val datepicker = DatePickerDialog(
+            requireContext(),
+            date,
+            calendar[Calendar.YEAR],
+            calendar[Calendar.MONTH],
+            calendar[Calendar.DAY_OF_MONTH]
+        )
+
+        datepicker.show()
+    }
+
+    private fun changeDateFormatAndSave(myCalendar: Calendar) {
+        val sdf = SimpleDateFormat("dd.MM.yyyy", Locale.US) //Example: 14.02.1999
+
+        viewModel.enteredDate.value = sdf.format(myCalendar.time)
+    }
 }
-//
-//class SpinnerAdapter(context: Context, resourceId: Int): ArrayAdapter<Doctor>(context, resourceId) {
-//
-//    private var data = mutableListOf<Doctor>()
-//    private val layoutInflater = LayoutInflater.from(context)
-//
-//    init {
-//
-//    }
-//
-//    fun setItems(newItems: List<Doctor>) {
-//        this.addAll(newItems)
-//        notifyDataSetChanged()
-//    }
-//
-//    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-//        val item = getItem(position)
-//        val view = layoutInflater.inflate()
-//        return super.getView(position, convertView, parent)
-//    }
-//}
+
+
