@@ -8,13 +8,15 @@ open class Appointment : RealmObject {
     @PrimaryKey
     var id: Int = 0
     var doctor: Doctor? = null
-    var dateTime: String? = null
+    var date: String? = null
+    var time: String? = null
 
     constructor() : super()
 
-    constructor(id: Int, doctor: Doctor, dateTime: String) {
+    constructor(id: Int, doctor: Doctor, date: String, time: String) {
         this.id = id
         this.doctor = doctor
-        this.dateTime = dateTime
+        this.date = date
+        this.time = time
     }
 }

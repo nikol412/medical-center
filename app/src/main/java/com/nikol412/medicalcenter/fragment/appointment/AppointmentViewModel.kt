@@ -1,15 +1,19 @@
 package com.nikol412.medicalcenter.fragment.appointment
 
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import androidx.lifecycle.MutableLiveData
 import com.nikol412.medicalcenter.R
+import com.nikol412.medicalcenter.db.models.Appointment
 import com.nikol412.medicalcenter.db.models.Doctor
+import com.nikol412.medicalcenter.db.repository.AppointmentRepository
 import com.nikol412.medicalcenter.db.repository.DoctorsRepository
 import com.nikol412.medicalcenter.fragment.BaseViewModel
 
 class AppointmentViewModel : BaseViewModel() {
-    val doctorsRepository = DoctorsRepository()
+    private val doctorsRepository = DoctorsRepository()
+    private val appointmentsRepository = AppointmentRepository()
 
     val departments = MutableLiveData<List<String>>()
 
@@ -53,7 +57,21 @@ class AppointmentViewModel : BaseViewModel() {
         if (enteredSpeciality != null && enteredDoctor != null
             && enteredDate.value != null && enteredTime.value != null
         ) {
-            navController?.navigate(R.id.medicalCardFragment)
+            appointmentsRepository.createAppointment(
+                Appointment(
+                    0,
+                    enteredDoctor!!,
+                    enteredDate.value!!,
+                    enteredTime.value!!
+                )
+            )
+            compositeDisposable.add(
+            appointmentsRepository.getAppointmentsFlowable()
+                .subscribe {
+                    Log.d("Realm", "doctor: ${it.firstOrNull()?.doctor} and date: ${it.firstOrNull()?.date}")
+                }
+            )
+            navController?.navigate(R.id.mainFragment)
         }
     }
 
