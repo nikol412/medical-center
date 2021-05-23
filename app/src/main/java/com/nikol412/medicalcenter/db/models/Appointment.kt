@@ -11,12 +11,14 @@ open class Appointment : RealmObject {
     var date: String? = null
     var time: String? = null
 
+    var diagnosis: Diagnosis? = null
     constructor() : super()
 
-    constructor(id: Int, doctor: Doctor, date: String, time: String) {
+    constructor(id: Int, doctor: Doctor, date: String, time: String, diagnosis: Diagnosis) {
         this.id = id
         this.doctor = doctor
         this.date = date
         this.time = time
+        this.diagnosis = diagnosis
     }
 }

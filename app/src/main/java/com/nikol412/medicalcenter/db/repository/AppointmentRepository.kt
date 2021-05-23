@@ -11,7 +11,7 @@ class AppointmentRepository {
 
     fun createAppointment(appointment: Appointment) {
 
-        realm.executeTransactionAsync { realm ->
+        realm.executeTransaction { realm ->
             val maxId = realm.where(Appointment::class.java)
                 .max(Appointment::id.name)
                 ?.toInt() ?: 0

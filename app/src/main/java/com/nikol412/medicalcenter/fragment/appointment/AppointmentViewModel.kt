@@ -6,14 +6,20 @@ import android.widget.AdapterView
 import androidx.lifecycle.MutableLiveData
 import com.nikol412.medicalcenter.R
 import com.nikol412.medicalcenter.db.models.Appointment
+import com.nikol412.medicalcenter.db.models.Diagnosis
 import com.nikol412.medicalcenter.db.models.Doctor
+import com.nikol412.medicalcenter.db.models.Drug
 import com.nikol412.medicalcenter.db.repository.AppointmentRepository
+import com.nikol412.medicalcenter.db.repository.DiagnosisRepository
 import com.nikol412.medicalcenter.db.repository.DoctorsRepository
+import com.nikol412.medicalcenter.db.repository.DrugRepository
 import com.nikol412.medicalcenter.fragment.BaseViewModel
 
 class AppointmentViewModel : BaseViewModel() {
     private val doctorsRepository = DoctorsRepository()
     private val appointmentsRepository = AppointmentRepository()
+    private val diagnosisRepository = DiagnosisRepository()
+    private val drugRepository = DrugRepository()
 
     val departments = MutableLiveData<List<String>>()
 
@@ -57,20 +63,18 @@ class AppointmentViewModel : BaseViewModel() {
         if (enteredSpeciality != null && enteredDoctor != null
             && enteredDate.value != null && enteredTime.value != null
         ) {
+            val diagnosis = diagnosisRepository.getRandomDiagnosis()
+
             appointmentsRepository.createAppointment(
                 Appointment(
                     0,
                     enteredDoctor!!,
                     enteredDate.value!!,
-                    enteredTime.value!!
+                    enteredTime.value!!,
+                    diagnosis
                 )
             )
-            compositeDisposable.add(
-            appointmentsRepository.getAppointmentsFlowable()
-                .subscribe {
-                    Log.d("Realm", "doctor: ${it.firstOrNull()?.doctor} and date: ${it.firstOrNull()?.date}")
-                }
-            )
+
             navController?.navigate(R.id.mainFragment)
         }
     }
