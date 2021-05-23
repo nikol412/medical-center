@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.nikol412.medicalcenter.fragment.resultInspection.ResultInspectionViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.resultInspection.ResultInspectionFragment"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Результат осмотра"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_result"
+            android:textSize="18sp"
+            tools:text="Жалоб нет"
+            android:text="@{ vm.resultInspectionText }"
+            android:layout_marginHorizontal="10dp" />
+
+    </LinearLayout>
+</layout>

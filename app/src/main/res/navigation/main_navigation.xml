@@ -40,4 +40,9 @@
         android:name="com.nikol412.medicalcenter.fragment.certificate.SessionCertificateFragment"
         android:label="SessionCertificateFragment"
         tools:layout="@layout/fragment_session_certificate"/>
+    <fragment
+        android:id="@+id/resultInspectionFragment"
+        android:name="com.nikol412.medicalcenter.fragment.resultInspection.ResultInspectionFragment"
+        android:label="fragment_result_inspection"
+        tools:layout="@layout/fragment_result_inspection" />
 </navigation>

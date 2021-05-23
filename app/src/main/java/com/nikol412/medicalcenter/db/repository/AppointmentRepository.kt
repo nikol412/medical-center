@@ -15,7 +15,7 @@ class AppointmentRepository {
             val maxId = realm.where(Appointment::class.java)
                 .max(Appointment::id.name)
                 ?.toInt() ?: 0
-            appointment.id = maxId+1
+            appointment.id = maxId + 1
             realm.copyToRealmOrUpdate(appointment)
         }
     }
@@ -24,6 +24,13 @@ class AppointmentRepository {
         return realm.where(Appointment::class.java)
             .sort(Appointment::date.name, Sort.ASCENDING, Appointment::time.name, Sort.ASCENDING)
             .findAllAsync()
+            .asFlowable()
+    }
+
+    fun getAppointmentById(id: Int): Flowable<Appointment> {
+        return realm.where(Appointment::class.java)
+            .equalTo(Appointment::id.name, id)
+            .findFirstAsync()
             .asFlowable()
     }
 }

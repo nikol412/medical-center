@@ -20,10 +20,9 @@ class MedicalCardFragment : Fragment() {
     private lateinit var binding: FragmentMedicalCardBinding
 
     private val adapter: MedicalCardsAdapter by lazy {
-        MedicalCardsAdapter(object: onMedicalCardClickListener {
+        MedicalCardsAdapter(object : onMedicalCardClickListener {
             override fun onClick(id: Int) {
-                // TODO: 23.05.2021 implement navigation to appointment record
-                id
+                viewModel.onWatchSessionClick(id)
             }
         })
     }
