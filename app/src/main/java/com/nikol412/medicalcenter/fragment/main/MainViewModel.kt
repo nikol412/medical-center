@@ -14,7 +14,7 @@ class MainViewModel : BaseViewModel() {
     }
 
     fun onWatchCardClick() {
-
+        navController?.navigate(R.id.medicalCardFragment)
     }
 
     fun onChatClick() {
