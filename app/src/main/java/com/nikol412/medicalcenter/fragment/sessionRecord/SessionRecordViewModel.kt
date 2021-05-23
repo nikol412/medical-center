@@ -16,7 +16,10 @@ class SessionRecordViewModel : BaseViewModel() {
     }
 
     fun onResultOfAnalysesClick() {
-
+        navController?.navigate(
+            R.id.resultAnalysisFragment,
+            bundleOf(APPOINTMENT_ID to appointmentId)
+        )
     }
 
     fun onPrescribedTreatmentClick() {

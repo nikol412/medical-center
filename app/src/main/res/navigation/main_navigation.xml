@@ -19,7 +19,7 @@
         android:id="@+id/appointmentFragment"
         android:name="com.nikol412.medicalcenter.fragment.appointment.AppointmentFragment"
         android:label="AppointmentFragment"
-        tools:layout="@layout/fragment_appointment"/>
+        tools:layout="@layout/fragment_appointment" />
     <fragment
         android:id="@+id/medicalCardFragment"
         android:name="com.nikol412.medicalcenter.fragment.medicalCard.MedicalCardFragment"
@@ -29,20 +29,24 @@
         android:id="@+id/sessionRecordFragment"
         android:name="com.nikol412.medicalcenter.fragment.sessionRecord.SessionRecordFragment"
         android:label="SessionRecordFragment"
-        tools:layout="@layout/fragment_session_record"/>
+        tools:layout="@layout/fragment_session_record" />
     <fragment
         android:id="@+id/prescribedTreatmentFragment"
         android:name="com.nikol412.medicalcenter.fragment.prescribedTreatment.PrescribedTreatmentFragment"
         android:label="PrescribedTreatmentFragment"
-        tools:layout="@layout/fragment_prescribed_treatment"/>
+        tools:layout="@layout/fragment_prescribed_treatment" />
     <fragment
         android:id="@+id/sessionCertificateFragment"
         android:name="com.nikol412.medicalcenter.fragment.certificate.SessionCertificateFragment"
         android:label="SessionCertificateFragment"
-        tools:layout="@layout/fragment_session_certificate"/>
+        tools:layout="@layout/fragment_session_certificate" />
     <fragment
         android:id="@+id/resultInspectionFragment"
         android:name="com.nikol412.medicalcenter.fragment.resultInspection.ResultInspectionFragment"
         android:label="fragment_result_inspection"
         tools:layout="@layout/fragment_result_inspection" />
+    <fragment
+        android:id="@+id/resultAnalysisFragment"
+        android:name="com.nikol412.medicalcenter.fragment.resultAnalysis.ResultAnalysisFragment"
+        android:label="ResultAnalysisFragment" />
 </navigation>
