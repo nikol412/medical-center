@@ -1,5 +1,6 @@
 package com.nikol412.medicalcenter.db.models
 
+import io.realm.RealmList
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
@@ -8,9 +9,8 @@ open class Diagnosis : RealmObject {
     @PrimaryKey
     var id: Int = 0
 
-    var doctorId: Doctor? = null
     var diseaseName: String? = null
-    var drug: Drug? = null
+    var drugsId: RealmList<Drug>? = null
 
     var resultInspection: String? = null
     var resultAnalysis: String? = null
@@ -19,16 +19,16 @@ open class Diagnosis : RealmObject {
 
     constructor(
         id: Int,
-        doctor: Doctor,
         diseaseName: String,
-        drug: Drug,
+        drugsId: List<Drug>,
         inspection: String,
         analysis: String
     ) {
         this.id = id
-        this.doctorId = doctorId
         this.diseaseName = diseaseName
-        this.drug = drug
+        val realmList = RealmList<Drug>()
+        realmList.addAll(drugsId)
+        this.drugsId = realmList
         this.resultInspection = inspection
         this.resultAnalysis = analysis
     }

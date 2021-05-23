@@ -23,7 +23,10 @@ class SessionRecordViewModel : BaseViewModel() {
     }
 
     fun onPrescribedTreatmentClick() {
-        navController?.navigate(R.id.prescribedTreatmentFragment)
+        navController?.navigate(
+            R.id.prescribedTreatmentFragment,
+            bundleOf(APPOINTMENT_ID to appointmentId)
+        )
     }
 
     fun onCertificateClick() {

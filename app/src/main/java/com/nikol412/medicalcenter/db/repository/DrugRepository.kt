@@ -1,8 +1,8 @@
 package com.nikol412.medicalcenter.db.repository
 
-import com.nikol412.medicalcenter.db.models.Diagnosis
 import com.nikol412.medicalcenter.db.models.Drug
 import io.realm.Realm
+import io.realm.RealmResults
 
 class DrugRepository {
     private val realm = Realm.getDefaultInstance()
@@ -23,5 +23,11 @@ class DrugRepository {
     fun getRandomDrug(): Drug {
         return realm.where(Drug::class.java)
             .findAll().random()
+    }
+
+    fun getDrugs(): RealmResults<Drug> {
+        return realm.where(Drug::class.java)
+            .findAll()
+
     }
 }
