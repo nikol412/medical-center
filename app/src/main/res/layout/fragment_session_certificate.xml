@@ -9,18 +9,31 @@
             type="com.nikol412.medicalcenter.fragment.certificate.SessionCertificateViewModel" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".fragment.certificate.SessionCertificateFragment">
+        android:layout_height="match_parent">
 
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:layout_marginTop="60dp"
-            android:text="Скачать" />
+            android:orientation="vertical"
+            tools:context=".fragment.certificate.SessionCertificateFragment">
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/spravka" />
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="60dp"
+                android:text="Скачать" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </layout>

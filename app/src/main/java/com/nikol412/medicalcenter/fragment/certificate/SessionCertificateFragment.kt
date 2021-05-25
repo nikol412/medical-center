@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.nikol412.medicalcenter.R
 import com.nikol412.medicalcenter.databinding.FragmentSessionCertificateBinding
 
+
 class SessionCertificateFragment : Fragment() {
     private val viewModel: SessionCertificateViewModel by viewModels()
     private lateinit var binding: FragmentSessionCertificateBinding
@@ -28,6 +29,8 @@ class SessionCertificateFragment : Fragment() {
 
         viewModel.navController = findNavController()
         binding.vm = viewModel
+
+
         return binding.root
     }
 }
