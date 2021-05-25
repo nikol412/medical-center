@@ -8,45 +8,45 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.nikol412.medicalcenter.fragment.login.LoginFragment"
-        android:label="fragment_login"
+        android:label="Авторизация"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.nikol412.medicalcenter.fragment.main.MainFragment"
-        android:label="fragment_main"
+        android:label="Главная"
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/appointmentFragment"
         android:name="com.nikol412.medicalcenter.fragment.appointment.AppointmentFragment"
-        android:label="AppointmentFragment"
+        android:label="Запись на прием"
         tools:layout="@layout/fragment_appointment" />
     <fragment
         android:id="@+id/medicalCardFragment"
         android:name="com.nikol412.medicalcenter.fragment.medicalCard.MedicalCardFragment"
-        android:label="fragment_medical_card"
+        android:label="Медицинская карта"
         tools:layout="@layout/fragment_medical_card" />
     <fragment
         android:id="@+id/sessionRecordFragment"
         android:name="com.nikol412.medicalcenter.fragment.sessionRecord.SessionRecordFragment"
-        android:label="SessionRecordFragment"
+        android:label="Запись приема"
         tools:layout="@layout/fragment_session_record" />
     <fragment
         android:id="@+id/prescribedTreatmentFragment"
         android:name="com.nikol412.medicalcenter.fragment.prescribedTreatment.PrescribedTreatmentFragment"
-        android:label="PrescribedTreatmentFragment"
+        android:label="Назначенное лечение"
         tools:layout="@layout/fragment_prescribed_treatment" />
     <fragment
         android:id="@+id/sessionCertificateFragment"
         android:name="com.nikol412.medicalcenter.fragment.certificate.SessionCertificateFragment"
-        android:label="SessionCertificateFragment"
+        android:label="Справки"
         tools:layout="@layout/fragment_session_certificate" />
     <fragment
         android:id="@+id/resultInspectionFragment"
         android:name="com.nikol412.medicalcenter.fragment.resultInspection.ResultInspectionFragment"
-        android:label="fragment_result_inspection"
+        android:label="Результат осмотра"
         tools:layout="@layout/fragment_result_inspection" />
     <fragment
         android:id="@+id/resultAnalysisFragment"
         android:name="com.nikol412.medicalcenter.fragment.resultAnalysis.ResultAnalysisFragment"
-        android:label="ResultAnalysisFragment" />
+        android:label="результат анализов" />
 </navigation>
