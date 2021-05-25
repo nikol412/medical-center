@@ -14,14 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".fragment.prescribedTreatment.PrescribedTreatmentFragment">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Назначенное лечение"
-            android:textSize="24sp" />
+        tools:context=".fragment.prescribedTreatment.PrescribedTreatmentFragment"
+        android:paddingTop="40dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_drugs"

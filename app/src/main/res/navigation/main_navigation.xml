@@ -48,5 +48,6 @@
     <fragment
         android:id="@+id/resultAnalysisFragment"
         android:name="com.nikol412.medicalcenter.fragment.resultAnalysis.ResultAnalysisFragment"
-        android:label="результат анализов" />
+        android:label="результат анализов"
+        tools:layout="@layout/fragment_result_analysis"/>
 </navigation>
