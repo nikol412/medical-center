@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import com.nikol412.medicalcenter.R
 import com.nikol412.medicalcenter.db.models.User
 import com.nikol412.medicalcenter.db.repository.UserRepository
+import com.nikol412.medicalcenter.extensions.safeLet
 
 class LoginViewModel : ViewModel() {
 
@@ -13,22 +14,25 @@ class LoginViewModel : ViewModel() {
 
     var userRepository = UserRepository()
 
-    private val login = "Nika"
-    private val password = "Nika"
     val userLogin = MutableLiveData("")
     val userPassword = MutableLiveData("")
 
-    init {
-        createUser()
 
-    }
     fun onLoginClick() {
-        if (userLogin.value == login && userPassword.value == password) {
-            navController?.navigate(R.id.mainFragment)
+        safeLet(userLogin.value, userPassword.value) { (login, password) ->
+            val user = User(login, password)
+            if (userRepository.isUserExist()) {
+                if (userRepository.checkUserIsValid(user)) {
+                    navigateToMain()
+                }
+            } else {
+                userRepository.createUser(user)
+                navigateToMain()
+            }
         }
     }
 
-    private fun createUser() {
-        userRepository.createUser(User(login, password))
+    private fun navigateToMain() {
+        navController?.navigate(R.id.mainFragment)
     }
 }

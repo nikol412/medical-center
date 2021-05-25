@@ -11,4 +11,15 @@ class UserRepository {
             realm.copyToRealmOrUpdate(user)
         }
     }
+
+    fun checkUserIsValid(user: User): Boolean {
+        val localUser = realm.where(User::class.java)
+            .findFirst()
+
+        return localUser?.login == user.login && localUser?.password == user.password
+    }
+
+    fun isUserExist(): Boolean {
+        return realm.where(User::class.java).findFirst() != null
+    }
 }
