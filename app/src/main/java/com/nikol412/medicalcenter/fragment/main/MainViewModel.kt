@@ -5,10 +5,6 @@ import com.nikol412.medicalcenter.fragment.BaseViewModel
 
 class MainViewModel : BaseViewModel() {
 
-    fun onAboutClick() {
-
-    }
-
     fun onMakeAppointment() {
         navController?.navigate(R.id.appointmentFragment)
     }
@@ -17,7 +13,4 @@ class MainViewModel : BaseViewModel() {
         navController?.navigate(R.id.medicalCardFragment)
     }
 
-    fun onChatClick() {
-
-    }
 }

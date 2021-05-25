@@ -16,15 +16,6 @@
         tools:context=".fragment.main.MainFragment">
 
         <Button
-            android:id="@+id/button_about"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:layout_marginTop="40dp"
-            android:onClick="@{() -> vm.onAboutClick()}"
-            android:text="@string/about_us_title" />
-
-        <Button
             android:id="@+id/button_make_appointment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,15 +32,6 @@
             android:layout_marginTop="20dp"
             android:onClick="@{() -> vm.onWatchCardClick()}"
             android:text="@string/watch_medical_card_title" />
-
-        <Button
-            android:id="@+id/button_chat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:layout_marginTop="20dp"
-            android:onClick="@{() -> vm.onChatClick()}"
-            android:text="@string/chat_title" />
 
     </LinearLayout>
 </layout>
